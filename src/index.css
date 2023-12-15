@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #0087a5;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #06dab3;
+    border-radius: 20px;
+}
+
+textarea {
+    all: unset;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #dde7ec;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 260px;
+    width: 100%;
+    background-image: linear-gradient(to left,
+            rgba(173, 239, 209, 0.746),
+            #00203FFF),
+        url("https://images.unsplash.com/photo-1464802686167-b939a6910659?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.first-heading {
+    font-size: 65px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    margin-top: 75px;
+    text-align: center;
+}
+
+.first-heading--thin {
+    font-weight: 300;
+}
+
+.container {
+    width: 1080px;
+    height: 900px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 55px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.textarea {
+    resize: none;
+    flex: 2;
+    font: inherit;
+    padding: 30px 40px;
+    font-size: 22px;
+    padding-bottom: 80px;
+}
+
+.textarea>textarea::placeholder {
+    font-weight: 500;
+    color: #999b9c;
+}
+
+.textarea>textarea {
+    width: 100%;
+    height: 100%;
+    overflow-wrap: break-word;
+}
+
+.warning {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    color: red;
+    font-size: 14px;
+    transition: all 0.4s;
+}
+
+.copy-btn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.copy-btn {
+    border: 0px;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    position: absolute;
+    bottom: 20px;
+    right: 420px;
+}
+
+.copy-btn:focus-within .copy-btn-icon {
+    color: #12b700d4;
+}
+
+.copy-btn:hover {
+    background-color: #dedadacd;
+}
+
+.copy-btn--plus {
+    border-left: 1px solid #0000fe26;
+}
+
+.copy-btn-icon {
+    color: #0055fed4;
+    height: 25px;
+    width: 25px;
+}
+
+.stats {
+    flex: 1.3;
+    background-color: rgba(232, 247, 252, 0.857);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stat {
+    flex: 1 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat:nth-child(1),
+.stat:nth-child(2) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.100);
+}
+
+.stat:nth-child(2),
+.stat:nth-child(4) {
+    border-left: 1px solid rgba(0, 0, 0, 0.100);
+}
+
+.stat:nth-child(5) {
+    border-top: 1px solid rgba(0, 0, 0, 0.100);
+}
+
+.stat__number {
+    color: #4a5053;
+    font-weight: 600;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.stat__number--limit {
+    color: red;
+}
+
+.second-heading {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #006080;
+}
+
+.footer {
+    width: 1050px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.4;
+}
+
+@media (max-width: 1150px) {
+    .container {
+        width: 85vw;
+        flex-direction: column;
+    }
+
+    .first-heading {
+        font-size: 7vw;
+    }
+
+    .stats {
+        flex: 1;
+    }
+
+    .stat {
+        padding: 15px 10px;
+    }
+
+    .stat:nth-child(1),
+    .stat:nth-child(2),
+    .stat:nth-child(3),
+    .stat:nth-child(4),
+    .stat:nth-child(5) {
+        border: none;
+    }
+
+    .stat__number {
+        font-size: 25px;
+    }
+
+    .warning {
+        position: absolute;
+        bottom: 290px;
+        left: 20px;
+        color: red;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+
+    .copy-btn {
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        bottom: 280px;
+        right: 20px;
+    }
+
+    .footer {
+        width: initial;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 353px) {
+    .copy-btn {
+        bottom: 455px;
+    }
+}
